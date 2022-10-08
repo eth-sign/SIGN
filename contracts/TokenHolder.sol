@@ -17,8 +17,13 @@ contract TokenHolder is Ownable {
 
     function transfer(bytes memory sig, address destSmartContract) external onlyOwner {
         TokenHolder tokenHolder = TokenHolder(destSmartContract);
-        tokenHolder.mint(sig, tokenURIs[sig]);
+        string memory metadata = tokenURIs[sig];
         delete tokenURIs[sig];
+        tokenHolder.receiveToken(sig, metadata);
+    }
+
+    function receiveToken(bytes memory sig, string memory metadata) external {
+        tokenURIs[sig] = metadata;
     }
 
     function tokenURI(bytes memory sig) external view returns(string memory) {
