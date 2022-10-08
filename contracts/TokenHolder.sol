@@ -11,11 +11,12 @@ contract TokenHolder is Ownable {
 
     constructor() {}
 
-    function mint(bytes memory sig, string memory metadata) external {
+    function mint(bytes memory sig, string memory metadata) external onlyOwner {
         tokenURIs[sig] = metadata;
     }
 
     function transfer(bytes memory sig, address destSmartContract) external onlyOwner {
+        // TODO: Fail if the token does not exist
         TokenHolder tokenHolder = TokenHolder(destSmartContract);
         string memory metadata = tokenURIs[sig];
         delete tokenURIs[sig];
@@ -23,6 +24,7 @@ contract TokenHolder is Ownable {
     }
 
     function receiveToken(bytes memory sig, string memory metadata) external {
+        // TODO: Check if sender has the token
         tokenURIs[sig] = metadata;
     }
 
