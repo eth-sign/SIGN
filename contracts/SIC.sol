@@ -35,6 +35,7 @@ contract SIC is Ownable {
     function receiveToken(bytes memory sig, string memory metadata) external {
         // TODO: Check if sender has the token
         tokenURIs[sig] = metadata;
+        signatures.push(sig);
     }
 
     function tokenURI(bytes memory sig) external view returns(string memory) {

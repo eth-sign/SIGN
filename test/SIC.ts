@@ -38,10 +38,16 @@ describe("SIC", function () {
       const content = "content";
       from.sic.mint(sign, content);
 
+      const sign2 = ethers.utils.formatBytes32String("some signature2");
+      const content2 = "content2";
+      from.sic.mint(sign2, content2);
+
       from.sic.transfer(sign, to.sic.address);
 
       expect(await from.sic.tokenURI(sign)).equal("");
       expect(await to.sic.tokenURI(sign)).equal(content);
+      expect(await from.sic.tokenURI(sign2)).equal(content2);
+      expect(await to.sic.tokenURI(sign2)).equal("");
     });
 
     it("Should not transfer if not correct destination address", async function() {
