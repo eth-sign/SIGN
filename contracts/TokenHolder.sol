@@ -11,15 +11,17 @@ contract TokenHolder is Ownable {
 
     constructor() {}
 
-    function mint(bytes memory sig, string memory metadata) public {
+    function mint(bytes memory sig, string memory metadata) external {
         tokenURIs[sig] = metadata;
     }
 
-    function transfer(bytes memory sig, address destSmartContract) public onlyOwner {
-        // TODO
+    function transfer(bytes memory sig, address destSmartContract) external onlyOwner {
+        TokenHolder tokenHolder = TokenHolder(destSmartContract);
+        tokenHolder.mint(sig, tokenURIs[sig]);
+        delete tokenURIs[sig];
     }
 
-    function tokenURI(bytes memory sig) public returns(string memory) {
-        return tokenURI(sig);
+    function tokenURI(bytes memory sig) external view returns(string memory) {
+        return tokenURIs[sig];
     }
 }
