@@ -13,7 +13,7 @@ PRIVATE_KEY=<Your Private Key>
 
 ```
 $ npx hardhat run --network goerli scripts/deploy.ts
-TokenHolder address:  0xb466CBCeAE05be58Dc8d3B499b17a4c30BC1BA9e
+Stationary Identity Contract (SIC) address:  0xb466CBCeAE05be58Dc8d3B499b17a4c30BC1BA9e
 ```
 
 3. Mint your Token
