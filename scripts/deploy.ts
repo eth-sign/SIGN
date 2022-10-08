@@ -1,11 +1,11 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const TokenHolder = await ethers.getContractFactory("TokenHolder");
-  const tokenHolder = await TokenHolder.deploy();
+  const SIC = await ethers.getContractFactory("SIC");
+  const sic = await SIC.deploy();
 
-  await tokenHolder.deployed();
-  console.log("TokenHolder address: ", tokenHolder.address);
+  await sic.deployed();
+  console.log("Stationary Identity Contract (SIC) address: ", sic.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

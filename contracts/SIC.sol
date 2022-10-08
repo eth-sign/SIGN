@@ -6,7 +6,7 @@ import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TokenHolder is Ownable {
+contract SIC is Ownable {
     mapping(bytes => string) private tokenURIs;
 
     constructor() {}
@@ -17,10 +17,10 @@ contract TokenHolder is Ownable {
 
     function transfer(bytes memory sig, address destSmartContract) external onlyOwner {
         // TODO: Fail if the token does not exist
-        TokenHolder tokenHolder = TokenHolder(destSmartContract);
+        SIC sic = SIC(destSmartContract);
         string memory metadata = tokenURIs[sig];
         delete tokenURIs[sig];
-        tokenHolder.receiveToken(sig, metadata);
+        sic.receiveToken(sig, metadata);
     }
 
     function receiveToken(bytes memory sig, string memory metadata) external {

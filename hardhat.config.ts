@@ -10,18 +10,18 @@ task("mint", "Mints a token")
   .addParam("tokenSignature", "Token Signature")
   .addParam("tokenMetadata", "Token Content")
   .setAction(async (taskArgs) => {
-    const TokenHolder = await ethers.getContractFactory("TokenHolder");
-    const tokenHolder = await TokenHolder.attach(taskArgs.contract);
-    const result = await tokenHolder.mint(ethers.utils.formatBytes32String(taskArgs.tokenSignature), taskArgs.tokenMetadata);
+    const SIC = await ethers.getContractFactory("SIC");
+    const sic = await SIC.attach(taskArgs.contract);
+    const result = await sic.mint(ethers.utils.formatBytes32String(taskArgs.tokenSignature), taskArgs.tokenMetadata);
 });
 
 task("content", "Checks token content")
   .addParam("contract", "Token address")
   .addParam("tokenSignature", "Token Signature")
   .setAction(async (taskArgs) => {
-    const TokenHolder = await ethers.getContractFactory("TokenHolder");
-    const tokenHolder = await TokenHolder.attach(taskArgs.contract);
-    const result = await tokenHolder.tokenURI(ethers.utils.formatBytes32String(taskArgs.tokenSignature));
+    const SIC = await ethers.getContractFactory("SIC");
+    const sic = await SIC.attach(taskArgs.contract);
+    const result = await sic.tokenURI(ethers.utils.formatBytes32String(taskArgs.tokenSignature));
     console.log(result);
 });
 
@@ -30,9 +30,9 @@ task("transfer", "Transfers the token")
   .addParam("tokenSignature", "Token Signature")
   .addParam("destContract", "Destination Smart Contract")
   .setAction(async (taskArgs) => {
-    const TokenHolder = await ethers.getContractFactory("TokenHolder");
-    const tokenHolder = await TokenHolder.attach(taskArgs.contract);
-    const result = await tokenHolder.transfer(ethers.utils.formatBytes32String(taskArgs.tokenSignature), taskArgs.destContract);
+    const SIC = await ethers.getContractFactory("SIC");
+    const sic = await SIC.attach(taskArgs.contract);
+    const result = await sic.transfer(ethers.utils.formatBytes32String(taskArgs.tokenSignature), taskArgs.destContract);
     console.log(result);
 });
 
