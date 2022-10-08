@@ -8,11 +8,13 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SIC is Ownable {
     mapping(bytes => string) private tokenURIs;
+    bytes[] private signatures;
 
     constructor() {}
 
     function mint(bytes memory sig, string memory metadata) external onlyOwner {
         tokenURIs[sig] = metadata;
+        signatures.push(sig);
     }
 
     function transfer(bytes memory sig, address destSmartContract) external onlyOwner {
@@ -20,6 +22,13 @@ contract SIC is Ownable {
         SIC sic = SIC(destSmartContract);
         string memory metadata = tokenURIs[sig];
         delete tokenURIs[sig];
+        for (uint i=0; i < signatures.length; i++) {
+            if (keccak256(signatures[i]) == keccak256(sig)) {
+                signatures[i] = signatures[signatures.length-1];
+                break;
+            }
+        }
+        signatures.pop();
         sic.receiveToken(sig, metadata);
     }
 
@@ -30,5 +39,9 @@ contract SIC is Ownable {
 
     function tokenURI(bytes memory sig) external view returns(string memory) {
         return tokenURIs[sig];
+    }
+
+    function getSignatures() external view returns(bytes[] memory) {
+        return signatures;
     }
 }
