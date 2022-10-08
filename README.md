@@ -1,13 +1,36 @@
-# Sample Hardhat Project
+# SIGN
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Getting started
 
-Try running some of the following tasks:
+1. Create `.env` with the following content.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
 ```
+ETH_URL=<ETH RPC Endpoint, e.g. Infura or Alchemy>
+PRIVATE_KEY=<Your Private Key>
+```
+
+2. Deploy your Smart Contract
+
+```
+$ npx hardhat run --network goerli scripts/deploy.ts
+TokenHolder address:  0xb466CBCeAE05be58Dc8d3B499b17a4c30BC1BA9e
+```
+
+3. Mint your Token
+
+```
+npx hardhat mint --network goerli --contract 0xb466CBCeAE05be58Dc8d3B499b17a4c30BC1BA9e --token-signature 8743b52063cd84097a --token-metadata 'content'
+```
+
+4. Transfer your Token
+
+```
+npx hardhat transfer --network goerli --contract 0xb466CBCeAE05be58Dc8d3B499b17a4c30BC1BA9e --token-signature 8743b52063cd84097a --dest-contract 0x6A96d08d016B84199679dAeabbB63Fed9F514422
+```
+
+5. Check your Token value
+
+```
+npx hardhat content --network goerli --contract 0x6A96d08d016B84199679dAeabbB63Fed9F514422 --token-signature 8743b52063cd84097a
+```
+
