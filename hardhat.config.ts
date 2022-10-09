@@ -41,6 +41,33 @@ task("transfer", "Transfers the token")
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
   networks: {
+    scroll: {
+      url: process.env.scroll,
+      gasLimit: 100000000000000,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    klaytn: {
+      url: process.env.klaytn,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    gnosis: {
+      url: process.env.gnosis,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    polygon: {
+      url: process.env.polygon,
+      gasLimit: 10000000,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    optimism: {
+      url: process.env.optimism,
+      gasLimit: 10000,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    eth:{
+      url: process.env.eth,
+      accounts: [process.env.PRIVATE_KEY],
+    },
     goerli: {
       url: process.env.ETH_URL,
       accounts: [process.env.PRIVATE_KEY],
