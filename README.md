@@ -38,32 +38,32 @@ npx hardhat content --network goerli --contract 0x6A96d08d016B84199679dAeabbB63F
 
 Deployments:
 
-- Ethereum
-# RPC provider: https://eth-rpc.gateway.pokt.network
-# Deployer: https://etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed
-# Contract: https://etherscan.io/address/0x45fa7877cae0f06568665223efe5b53a2b917909
+- Ethereum<br/>
+RPC provider: https://eth-rpc.gateway.pokt.network<br/>
+Deployer: https://etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed<br/>
+Contract: https://etherscan.io/address/0x45fa7877cae0f06568665223efe5b53a2b917909<br/>
 
-- Polygon
-Explanation: https://twitter.com/ATomasevicius/status/1578989055920201728
-RPC provider: https://poly-rpc.gateway.pokt.network
-Deployer: https://polygonscan.com/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed
-Contract: https://polygonscan.com/address/0xa5f90284a54c9857be4d0c40fe4be23457c1ff9f
+- Polygon<br/>
+Explanation: https://twitter.com/ATomasevicius/status/1578989055920201728<br/>
+RPC provider: https://poly-rpc.gateway.pokt.network<br/>
+Deployer: https://polygonscan.com/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed<br/>
+Contract: https://polygonscan.com/address/0xa5f90284a54c9857be4d0c40fe4be23457c1ff9f<br/>
 
-- Optimism
-RPC provider: https://optimism-rpc.gateway.pokt.network
-Deployer: https://optimistic.etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed
-Contract: https://optimistic.etherscan.io/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2
+- Optimism<br/>
+RPC provider: https://optimism-rpc.gateway.pokt.network<br/>
+Deployer: https://optimistic.etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed<br/>
+Contract: https://optimistic.etherscan.io/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2<br/>
 
-- Scroll
-Deployer: https://l2scan.scroll.io/address/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD
-Contract: https://l2scan.scroll.io/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2
+- Scroll<br/>
+Deployer: https://l2scan.scroll.io/address/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD<br/>
+Contract: https://l2scan.scroll.io/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2<br/>
 
-- Klaytn
-RPC provider: https://klaytn-rpc.gateway.pokt.network
-Deployer: https://scope.klaytn.com/account/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD?tabId=internalTx
-Contract: https://scope.klaytn.com/account/0xc039c13470be809bed1c2cd42339ccb22e0970f2?tabId=internalTx
+- Klaytn<br/>
+RPC provider: https://klaytn-rpc.gateway.pokt.network<br/>
+Deployer: https://scope.klaytn.com/account/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD?tabId=internalTx<br/>
+Contract: https://scope.klaytn.com/account/0xc039c13470be809bed1c2cd42339ccb22e0970f2?tabId=internalTx<br/>
 
-- Gnosis Chain
-RPC provider: https://gnosischain-rpc.gateway.pokt.network
-Deployer: https://blockscout.com/xdai/mainnet/address/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD
-Contract: https://blockscout.com/xdai/mainnet/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2
+- Gnosis Chain<br/>
+RPC provider: https://gnosischain-rpc.gateway.pokt.network<br/>
+Deployer: https://blockscout.com/xdai/mainnet/address/0x0D9d3729a5191b298137e744c3e4add3A18e2BeD<br/>
+Contract: https://blockscout.com/xdai/mainnet/address/0xc039C13470be809beD1C2CD42339Ccb22e0970f2<br/>
