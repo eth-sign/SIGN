@@ -39,9 +39,9 @@ npx hardhat content --network goerli --contract 0x6A96d08d016B84199679dAeabbB63F
 Deployments:
 
 - Ethereum
-RPC provider: https://eth-rpc.gateway.pokt.network
-Deployer: https://etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed
-Contract: https://etherscan.io/address/0x45fa7877cae0f06568665223efe5b53a2b917909
+# RPC provider: https://eth-rpc.gateway.pokt.network
+# Deployer: https://etherscan.io/address/0x0d9d3729a5191b298137e744c3e4add3a18e2bed
+# Contract: https://etherscan.io/address/0x45fa7877cae0f06568665223efe5b53a2b917909
 
 - Polygon
 Explanation: https://twitter.com/ATomasevicius/status/1578989055920201728
